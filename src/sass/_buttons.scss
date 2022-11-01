@@ -1,0 +1,26 @@
+.main-button{
+        width: 136px;
+        height: 44px;
+        border: 1px solid #FFFFFF;
+        border-radius: 5px;
+
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.33;
+        text-transform: uppercase;
+        color: $secondColor;
+        &:not(:last-child) {
+            margin-right: 15px;
+          }
+          &__modal{
+            border: 1px solid $mainColor;
+            color: $mainColor;
+        }
+        &--currentBtn{
+            color: $secondColor;
+            background-color: $accentColor; 
+            border: inherit;
+        }  
+        
+}

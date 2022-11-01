@@ -1,0 +1,96 @@
+// mobile 320px
+.footer{ 
+    background-color: #F7F7F7;
+    &__container{
+        height: 100px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        margin: 0px auto;
+        
+    }
+    &__list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+    }
+    &__item{
+        position: relative;
+        margin-left: 6px;
+        margin-right: 5px;
+
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.14;
+        color: #545454;
+        &:not(:last-child){
+            &::after{
+                content: "";
+                position: absolute;
+               
+                bottom: 2px;
+                right: -5px;
+                
+        
+                display: block;
+                width: 1px;
+                height: 12px;
+                text-align: center;
+        
+                background-color: #545454;
+        
+          }
+        }
+        
+        &:nth-child(3){
+            margin-left: 0px;
+            margin-right: 14px;
+            &::after{
+                position: absolute;
+                content: '';
+                background-image: url("../images/heart.svg");
+                width: 14px;
+                height: 14px;
+                display: inline-block;
+                right: -16px;
+                top: 2px;
+                background-color: #F7F7F7;   
+                
+            }
+
+        }
+
+    }
+}
+
+// tablet 768px and desctop 1024px
+  
+@include device-size(tablet) {
+    .footer{
+        &__container{
+        height: 77px;
+        
+        }
+        &__list{
+            flex-wrap: no-wrap;
+        }
+        &__item{
+            font-size: 16px;
+            line-height: 1.19;
+            &:not(:last-child){
+                &::after{
+                    bottom: 4px;
+                    height: 14px;
+                    
+              }
+            }
+            
+            &:nth-child(3){
+                margin-left: 6px;
+            }
+    }
+
+}
+}

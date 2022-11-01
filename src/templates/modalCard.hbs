@@ -1,0 +1,41 @@
+<div class="modal__thumb">
+  {{#if poster_path}}
+        <img loading="lazy" class="modal__image img" src=https://www.themoviedb.org/t/p/w500{{poster_path}} alt="{{title}}" />
+        {{else}}
+        <div class="modal__image-error img">Sorry... We don't have poster for this movie &#9785;</div>
+        {{/if}}
+</div>
+<div class="modal__content">
+  {{#if title}}
+  <h2 class="modal__title">{{title}}</h2>
+  {{/if}}
+  <div class="modal__wrap">
+    <ul class="modal__list modal__list--keys">
+      <li class="modal__item modal__item--keys">Vote / Votes</li>
+      <li class="modal__item modal__item--keys">Popularity</li>
+      <li class="modal__item modal__item--keys">Original Title</li>
+      <li class="modal__item modal__item--keys">Genre</li>
+    </ul>
+    <ul class="modal__list modal__list--values">
+      <li class="modal__item">
+        <span class="modal__rating--orange">{{vote_average}}</span>
+        <span class="modal__rating--slash"> /</span>
+        <span class="modal__rating">{{vote_count}}</span>
+      </li>
+      <li class="modal__item">{{popularity}}</li>
+      <li class="modal__item">{{#if original_title}}
+        <p>{{original_title}}</p>
+        {{/if}}
+      </li>
+      <li class="modal__item">{{genres}}</li>
+    </ul>
+  </div>
+  <div class="modal__about">
+    <h3 class="modal__about--title">About</h3>
+    <p class="modal__about--desc">{{overview}}</p>
+  </div>
+  <div class="modal__buttons">
+        <button  type="button" id={{id}} class="main-button__modal watched-btn main-button main-button--currentBtn">Add to watched</button>
+        <button type="button" id={{id}} class="main-button__modal queue-btn main-button">Add to queue</button>
+      </div>
+</div>

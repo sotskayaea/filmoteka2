@@ -1,0 +1,226 @@
+// Делаю стили для страницы Home 
+//  mobile 320px
+.header{
+    &__container{
+        padding-top: 45px;
+        padding-bottom: 45px;
+        height: 230px;
+
+        &--home{     
+        content: '';
+        background-image: url(../images/home/headerBg-mobile.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+       
+    }
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+    
+      }
+    &__logo-link{
+        display: block;
+    
+    }
+    &__logo-svg{
+        width: 24px;
+        height: 24px;
+    }
+    &__logo-description{
+        display: none;
+    }
+    &__menu-list{
+        display: flex;
+        align-items: center;
+    
+    }
+    &__menu-item{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.17;
+        text-transform: uppercase;
+        color: $secondColor;
+        &:not(:last-child) {
+            margin-right: 40px;
+          }
+    
+    }
+   
+    &__search-form{
+        position: relative;
+
+        width: 280px;
+        margin: 0px auto;
+        display: flex;
+        justify-content: space-between;
+        
+        &::after{
+        content: "";
+        position: absolute;
+        bottom: -4px;
+
+        display: block;
+        width: 100%;
+        height: 1px;
+
+        background-color: $secondColor;
+
+        }
+    }
+    &__input{
+        color: $secondColor;
+        &::placeholder{
+            display: inline-block;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.14;
+            color: $secondColor;
+        }
+    }
+    &__search-button{
+      display: block;  
+    }
+    &__btn-svg{
+        width: 12px;
+        height: 12px;
+    }
+    &__input_msg_error{
+        margin-top: 22px;
+        
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.14;
+        text-align: center;
+        color: #FF001B;
+
+    }
+}
+
+// tablet 768px
+  
+  @include device-size(tablet) {
+    .header{
+        &__container{
+            padding-top: 40px;
+            padding-bottom: 60px;
+        
+            &--home{
+                content: '';
+                background-image: url(../images/home/headerBg-tablet.jpg);
+                
+            }
+            
+        }
+        &__logo-page{
+            display: flex;
+            align-items: baseline;
+        }
+        &__logo-link{
+            margin-right: 10px;
+        
+        }
+        &__logo-description{
+            display: block;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 30px;
+            line-height: 1.17;
+            color: $secondColor;
+        }
+       
+        &__search-form{
+            width: 336px;
+
+        }
+    }
+   
+  }
+  
+// //   desctop 1024 px
+
+  @include device-size(desktop) {
+    .header{
+        &__container{
+            padding-top: 40px;
+            padding-bottom: 100px;
+        
+            &--home{
+                content: '';
+                background-image: url(../images/home/headerBg-desktop.jpg);
+                
+                }
+                
+        }
+       
+    } 
+  }
+
+//Делаю стили для хедера на странице My Library
+// mobile 320px
+.header{
+    &__container{
+        &--library{
+            content: '';
+            background-image: url(../images/library/libraryBg-mobile.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+        } 
+    }
+    &__buttons{
+        display: none;
+        justify-content: center;
+
+    }
+    
+}
+
+// tablet 768 px 
+@include device-size(tablet) {
+    .header{
+        &__container{
+            &--library{
+                background-image: url(../images/library/libraryBg-tablet.jpg);
+                
+            }
+        }
+
+    }
+}
+// desktop 1024px
+@include device-size(desktop) {
+    .header{
+        &__container{
+            &--library{
+                background-image: url(../images/library/libraryBg-desktop.jpg);
+               
+            }
+        }
+    }
+}
+
+// Делаю текущую страницу с подчеркиванием 
+.header__menu-link--current {   
+  position: relative;
+
+  &::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+
+  display: block;
+  width: 100%;
+  height: 3px;
+
+  background-color: $accentColor;
+}
+}
+

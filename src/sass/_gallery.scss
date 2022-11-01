@@ -1,0 +1,116 @@
+// mobile 320px 
+.gallery{
+  
+     display: flex;
+     flex-direction: column;
+    
+    &__item{
+       margin: 0 auto;
+       width: 280px;
+       height: 440px;
+       &:not(:last-child){
+        margin-bottom: 20px;
+       }
+    }
+    &__img {
+        height: 398px;
+        border-radius: 5px;
+    }
+    &__img-error{
+        height: 398px;
+        border-radius: 5px;
+        border: 1px solid #8C8C8C;
+        padding-top: 170px;
+
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1.15;
+        text-align: center;
+        text-transform: uppercase;
+        color:  #8C8C8C;
+        
+    }
+    &__description{
+        padding-top: 10px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.33;  
+    }
+    &__title{
+        text-transform: uppercase;
+        color: $mainColor;
+
+    }
+    &__description-text{
+        display: flex;
+        align-items: center;
+        color: $accentColor;
+
+    }
+    &__description-list {
+        display: flex;
+
+    }
+    &__description-rating{
+        display: block;
+        width: 36px;
+        height: 16px;
+        margin-left: 10px;
+        text-align: center;
+        color: $secondColor;
+        background-color: $accentColor;
+        border-radius: 5px;
+        
+    }
+}
+
+// tablet 768px
+@include device-size(tablet) {
+    .gallery{
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin-left: -30px;
+        margin-top: -30px;
+
+        &__item{
+            width: 678px;
+            margin-left: 30px;
+            margin-top: 30px;
+            flex-basis: calc((100% - 60px) / 2);
+
+            &:nth-last-child(-n + 2){
+                margin-right: 0;
+                
+            }
+        
+            &:not(:last-child){
+             margin-bottom: 0px;
+            }
+         }
+         &__img{
+            height: 398px;
+         }
+    }
+}
+
+//Desktop 1024px
+
+@include device-size(desktop) {
+    .gallery{
+        &__item{
+            
+            width: 882px;
+            flex-basis: calc((100% - 90px) / 3);
+            
+           
+
+         }
+    }
+}
+
+
